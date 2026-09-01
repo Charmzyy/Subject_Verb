@@ -21,7 +21,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Compile
-        run: javac my.java
+        run: javac BottomUpParser.java
 
       - name: Run with sample input
         run: echo "the cat sat" | java BottomUpParser
