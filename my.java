@@ -19,7 +19,7 @@ public class BottomUpParser {
         }
     }
 
-    // The parse function checks whether the sentence is grammatically correct
+    // The parse function checks whether the sentence is grammatically correct testing
     private static boolean parse(String[] chart) {
         // Get the number of words in the sentence
         int chartSize = chart.length;
