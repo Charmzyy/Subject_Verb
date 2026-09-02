@@ -1,0 +1,21 @@
+name: Trigger Events
+on:
+  push:
+    branches:
+      - "IS-6/*"
+  pull_request:
+    types:
+      - opened
+      - synchronize
+env:
+  WORK_FLOW_VAR: I_AM_WORKFLOW_SCOPED
+jobs:
+  job1:
+    runs-on: ubuntu-24.04
+    env:
+      JOB_VAR: I_AM_JOB_SCOPED
+    steps:
+      - id: step1
+        env:
+          STEP_VAR: I_AM_STEP_SCOPE
+        run: echo "this is my test"
