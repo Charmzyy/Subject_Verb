@@ -41,8 +41,11 @@ jobs:
 
   docker:
     needs: build
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    environment: production
+    environment:
+      name: production
+      url: https://ghcr.io/${{ github.repository }}
 
     permissions:
       contents: read
