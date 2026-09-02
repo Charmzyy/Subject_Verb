@@ -7,7 +7,7 @@ public class BottomUpParser {
             System.out.print("Enter a sentence: ");
             // Read the user input as a sentence
             String sentence = scanner.nextLine();
-
+//this is a jira test
             // Split the sentence into words
             String[] chart = sentence.split(" ");
 
