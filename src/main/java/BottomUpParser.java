@@ -3,19 +3,20 @@ import java.util.Scanner;
 public class BottomUpParser {
     public static void main(String[] args) {
         // Create a scanner to read user input
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a sentence: ");
-        // Read the user input as a sentence
-        String sentence = scanner.nextLine();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter a sentence: ");
+            // Read the user input as a sentence
+            String sentence = scanner.nextLine();
 
-        // Split the sentence into words
-        String[] chart = sentence.split(" ");
+            // Split the sentence into words
+            String[] chart = sentence.split(" ");
 
-        // Check if the entered sentence is grammatically correct
-        if (parse(chart)) {
-            System.out.println("Sentence is grammatically correct.");
-        } else {
-            System.out.println("Sentence violates grammar rules.");
+            // Check if the entered sentence is grammatically correct
+            if (parse(chart)) {
+                System.out.println("Sentence is grammatically correct.");
+            } else {
+                System.out.println("Sentence violates grammar rules.");
+            }
         }
     }
 
