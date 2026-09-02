@@ -11,6 +11,8 @@ name: Subject-Verb
 run-name: subject
 on:
   push:
+    branches: [ "main", "IS-6-Patch1" ]
+  pull_request: 
     branches: [ "main" ]
   
 
