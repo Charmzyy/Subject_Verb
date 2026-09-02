@@ -1,8 +1,6 @@
 name: Workflows, Jobs, Tests
-
 on:
   workflow_dispatch:
-
 jobs:
   job1:
     runs-on: ubuntu-22.04
@@ -11,7 +9,6 @@ jobs:
     steps:
       - id: step1
         run: echo "message=Hello from Job1" >> $GITHUB_OUTPUT
-
   job2:
     runs-on: ubuntu-22.04
     outputs:
@@ -19,13 +16,12 @@ jobs:
     steps:
       - id: step2
         run: echo "message=Hello from Job2" >> $GITHUB_OUTPUT
-
   job3:
     runs-on: ubuntu-24.04
-    needs: 
+    needs:
       - job1
       - job2
     steps:
-      - run: echo "Job3 received: ${{ needs.job1.outputs.job1_message }}"
-      - run: echo "Job3 also received: ${{ needs.job2.outputs.job2_message }}"
+      - run: echo "Job3 received:${{ needs.job1.outputs.job1_message }}"
+      - run: echo "Job3 also received:${{ needs.job2.outputs.job2_message }}"
       - run: echo "This is Job3 third step"
