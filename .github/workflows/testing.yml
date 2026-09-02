@@ -1,26 +1,25 @@
-name: Workflows, Jobs , Tests
+name: Workflows, Jobs, Tests
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+
 jobs:
   job1:
-    runs-on:
-      - ubuntu-22.04
+    runs-on: ubuntu-22.04
     steps:
-      - run : This Job 1 I start this workflow
-   job2:
-    runs-on:
-      - ubuntu-22.04
+      - run: echo "This is Job1, I start this workflow"
+
+  job2:
+    runs-on: ubuntu-22.04
     steps:
-      - run : This Job 1 I start this workflow
+      - run: echo "This is Job2, I start this workflow"
+
   job3:
-     runs-on:
-       - ubuntu-24.04
-     steps:
-       - run : This is Job3 first step
-       - run : This is Job3 second step
-       - run : This is Job3 third step
-     needs:
-       - job1
-       - job2
-  
+    runs-on: ubuntu-24.04
+    needs: 
+      - job1
+      - job2
+    steps:
+      - run: echo "This is Job3 first step"
+      - run: echo "This is Job3 second step"
+      - run: echo "This is Job3 third step"
